@@ -1,9 +1,5 @@
 $(document).ready(function(){
-    //nav 變中文
-    $('.left-nav li a').hover(function(){
-    	$(this).find('.en').toggle();    	
-    	$(this).find('.ch').toggle();
-    });
+
 	// go Top
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 300){
@@ -61,10 +57,10 @@ $(document).ready(function(){
 
 	$(window).scroll(function(){
 		if($(window).scrollTop()>400){
-			$('.reserve_content').css({
-				// opacity:'0',
+			//$('.reserve_content').css({
+				// opacity:'1',
 				// transition: '1.3s'
-			});
+			//});
 		}
 		if($(window).scrollTop()>1500){
 			$('.lesson_content').css({
