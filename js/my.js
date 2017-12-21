@@ -63,10 +63,10 @@ $(document).ready(function(){
 			//});
 		}
 		if($(window).scrollTop()>1500){
-			$('.lesson_content').css({
-				opacity:'1',
-				transition: '1.3s',
-			});
+			// $('.lesson_content').css({
+			// 	opacity:'1',
+			// 	transition: '1.3s',
+			// });
 		}
 		
 	});

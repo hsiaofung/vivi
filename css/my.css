@@ -1,7 +1,7 @@
 body{
 	font-family: "微軟正黑體";
 	/*background-color:#FAF4F3;*/
-	background-color: #000;
+	background-color:rgba(0,0,0,0.1);
 	color:#666;
 }
 a{
@@ -14,33 +14,60 @@ img{
 }
 .en{
 	font-family: arial;
-	color: #fff;
+	display: inline-block;
+	/*padding: 5px;*/
+	/*font-size: 12px;*/
 }
 .btn:hover{
 	cursor: pointer;
 }
 .more:hover{
 	background-color: #fff;
-	color: #000;
-	border: 2px solid #000;
+	/*color: #ed748e;*/
+	color: rgba(0,0,0,.6);
 }
 .more{
 	font-family: "微軟正黑體";
 	display: inline-block;
 	text-decoration: none;
 	color: #fff;
-	background-color: transparent;
-	/*border-radius: 10px;*/
+	/*background-color: #ffa8a8;*/
+	/*background-color: rgba(0,0,0,.15);*/
+	background-color: #a6a6a6;
+	border-radius: 10px;
 	padding: 10px 50px;
 	font-size: 14px;
 	/*border: 1px dashed #ed748e;*/
-	border: 2px solid #fff;
+	border: 1px dashed rgba(0,0,0,.3);
 	text-align: center;
 	transition: all 0.3s ease-out;
 }
 #control-box{
 		opacity: 0;
 		position: fixed;
+}
+/*對齊*/
+.text-left{
+	text-align: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+/*color*/
+.black{
+	color: black;
+}
+.bg-black{
+	background-color: #000;
+}
+.white{
+	color: white;
+}
+.gray{
+	color: rgba(255,255,255,0.7);
 }
 /*====================手機NAV====================*/
 @media screen and (max-width: 870px) {
@@ -115,11 +142,17 @@ img{
 		left: 0;
 		top: 90px;
 	}
-	.menu-logo{
-		display: inline-block;
+	.menu-logo{		
+		display: block;
 		margin: 10px 15px;
-	}
+		position: fixed;
+		top: -4px;
+		left: 92px;		
 
+	}
+    #logo{
+    	width: 80%;
+    }
 	.menu-box:before{
 		content: '';
 		display: block;
@@ -181,10 +214,9 @@ img{
 /*====================PC NAV====================*/
 @media screen and (min-width: 871px) {
 	.menu-box{
-		height: 40px;
-		/*background-color: #000;*/
-		background-color: rgba(255,255,255,0.3);
-		box-shadow: 0 3px 10px rgba(255,255,255,.8);
+		height: 100px;
+		background-color: #fff;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
 		position: fixed; 
 		top: 0;
 		right: 0;
@@ -194,31 +226,34 @@ img{
 	.menu-box:before{
 		content: '';
 		display: block;
-		/*border-top: 10px solid #eebac7;*/		
+		/*border-top: 10px solid #eebac7;*/
+		border-top: 10px solid rgba(0,0,0,.3);
 	}
 	.menu-logo{
-		width: 28px;
-		/*margin: 12px 30px 13px 30px;*/
-		padding: 8px 0 0px 38px;
-		display: inline-block;
+		width: 100px;
+		margin: 12px 30px 13px 30px;
+		display: inline-block;		
+	}
+	.menu-logo img{
+        /*border-radius: 50px;*/
+        width: 70%;
 	}
 	.login .pic,.cart .pic{
 		display: inline-block;
-		/*display: none;*/
 		vertical-align: middle;
 	}
 	.login{
 		vertical-align: middle;
 		position: absolute;
 		right: 65px;
-		top: -50px;
+		top: -38px;
 		font-size: 12px;
 	}
 	.cart{
 		vertical-align: top;
 		position: absolute;
 		right: -10px;
-		top: -50px;
+		top: -38px;
 		font-size: 12px;
 	}
 	.icon-box:hover span{
@@ -229,19 +264,36 @@ img{
 	}
 	nav{
 		position: absolute;
-		bottom: 7px;
-		/*right: 20px;*/
-		left: 123px;
+		bottom: 0px;
+		right: 20px;
+		width: 100%;
+		text-align: left;
+		box-sizing: border-box;
+		padding-left: 165px;
 	} 
 	nav ul li .ch{
-		 display: none; 
+		 display: none;
+		 padding: 5px;
+		 color:#eebac7;
+		 font-family: '微軟正黑體';
 	}
 	nav ul{
 		font-size: 0;
+		display: inline-block;
+		/*outline: 1px solid red;*/
 	}
+	nav ul:first-child{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	
 	nav ul li {
 		display: inline-block;
-		padding: 0 15px;
+		padding: 5px 15px;
+	}
+
+	.right-nav li:first-child {
+		padding: 0 15px 0 30px;
 	}
 	nav ul li a{
 		font-family: arial;
@@ -250,14 +302,18 @@ img{
 		transition: 0.5s;
 		padding: 5px 0;
 	}
+	nav a:hover{
+		transition: 0.5s;
+		color:#eebac7;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+	}
 	nav a:before{
 		content: '';
 		display: block;
 		width: 0%;
 		bottom: -2px;
 		height: 4px;
-		/*background-color: #eebac7;*/
-		background-color: #fff;
+		background-color: #eebac7;
 		position: absolute;
 		transition: 0.5s;
 	}
@@ -274,7 +330,7 @@ img{
 		position: absolute;
 	}
 	.banner_in{
-		height: 40px;
+		height: 100px;
 		margin: auto;
 	}	
 }
@@ -288,29 +344,25 @@ img{
 .reserve_content{
 	text-align: center;
 	float: none;
-	/*background-color:rgba(255,255,255,.5);*/
-	background-color:rgba(0,0,0,1);
+	background-color:rgba(255,255,255,.5);
 	box-sizing: border-box;
 	width: 100%;
 	padding: 15px 0;
-	opacity: 1;
+	/*opacity: 0;*/
 
 }
 .lesson_content{
 	text-align: center;
 	float: none;
 	width: 100%;
-	/*background-color:rgba(255,255,255,.5);*/
-	background-color: #000;
+	background-color:rgba(255,255,255,.5);
 	box-sizing: border-box;
 	padding: 15px 15px;
-	opacity: 1;
+	/*opacity: 0;*/
 
 }
 .lesson .text{
 	text-align: left;
-	line-height: 1.8;
-	font-size: 15px;
 }
 .about, .contact{
 	margin: 30px 0;
@@ -367,7 +419,7 @@ img{
 	}
 	.reserve_content{
 		float: right;
-		width: 50%;
+		width: 48%;
 		padding: 4% 0;
 	}
 	.lesson_content{
@@ -379,7 +431,6 @@ img{
 	.about, .contact{
 		padding: 20px;
 		margin: 20px 40px;
-
 	}
 
 	.product .item{
@@ -446,7 +497,7 @@ img{
 	margin: auto;
 	text-align: center;
 	/*background-color: #f1e1e5;*/
-	background-color: #000;
+	background-color: rgba(0,0,0,.15);
 }
 h2{
 	position: relative;
@@ -462,7 +513,7 @@ h3{
 	font-size: 20px;
 	padding: 0 0 20px 0;	
 }
-.design_title h2,.reserve_title,.product_title h2,.lesson_title h2,.about_title h2,.contact_title h2{
+.design_title h2,.reserve_title,.product_title h2,.lesson_title h2,.about_title h2,.contact_title h2, .teacher_title h2{
 	display: inline-block;
 }
 
@@ -476,7 +527,7 @@ h3{
 		background-image: linear-gradient(90deg, #c8b99e 0%, #666 100%);  
 		position: absolute;
 		top: 50%;
-		left:-80%;
+		left:-65%;
 	}
 	.design_title h2:after{
 		content: '';
@@ -486,7 +537,7 @@ h3{
 		background-image: linear-gradient(90deg, #666 0%,#c8b99e  100%);  
 		position: absolute;
 		top: 50%;
-		right:-80%;
+		right:-65%;
 	}
 	.reserve_title h2:before{
 		content: '';
@@ -591,6 +642,46 @@ h3{
 		top: 50%;
 		right:-58%;
 	}
+	.teacher_title h2:before{
+		content: '';
+		display: block;
+		width: 150px;
+		height: 1px;
+		background-image: linear-gradient(90deg, #c8b99e 0%, #666 100%);  
+		position: absolute;
+		top: 50%;
+		left:-80%;
+	}
+	.teacher_title h2:after{
+		content: '';
+		display: block;
+		width: 150px;
+		height: 1px;
+		background-image: linear-gradient(90deg, #666 0%,#c8b99e  100%);  
+		position: absolute;
+		top: 50%;
+		right:-80%;
+	}
+	.outtake_title h2:before{
+		content: '';
+		display: block;
+		width: 150px;
+		height: 1px;
+		background-image: linear-gradient(90deg, #c8b99e 0%, #666 100%);  
+		position: absolute;
+		top: 50%;
+		left:27%;
+	}
+	.outtake_title h2:after{
+		content: '';
+		display: block;
+		width: 150px;
+		height: 1px;
+		background-image: linear-gradient(90deg, #666 0%,#c8b99e  100%);  
+		position: absolute;
+		top: 50%;
+		right:27%;
+	}
 }
 
 
@@ -616,16 +707,15 @@ h3{
 } 
 .design_more{
 	/*background-color: #f1e1e5;*/
-	background-color: #000;
 	padding: 40px 0px 20px;
 }
 
 /*--------------------------*/
 .reserve{
-	background-image: url(../images/index_reserve1.jpg);
+	/*background-image: url(../images/index_sign_up_8.jpg);
 	background-position: left;
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
 
 }
 
@@ -644,11 +734,116 @@ h3{
 	padding: 10px 0 20px;
 	text-align: center;
 }
+/*===課程花絮===========*/
 
+.outtake{
+	background-color: #fff;
+	padding: 2% 0;
+}
+.outtake .pic{
+	/*opacity: 0;*/
+}
+.outtake .pic .item{
+	padding: 10px 10px 20px;
+	margin: 40px 20px;
+	position: relative;
+	background-color: #fff;
+	position: relative;
+	border: 12px solid #F0E0E4;	
+}
+
+.outtake .pic .item:nth-child(even){
+	margin: 20px 0 45px;
+}
+.outtake .pic .item:before{
+	content: "";
+	display: block;
+	width: 110px;
+	height: 15px;
+	background-color: rgba(157,139,130,.6);
+	position: absolute;
+	bottom: -2px;
+	left: 15px;
+	filter: blur(4px);
+	transform: skewY(-9deg);
+} 
+.outtake .pic .item:after{
+	content: "";
+	display: block;
+	width: 110px;
+	height: 10px;
+	background-color: rgba(157,139,130,.6);
+	position: absolute;
+	bottom: -2px;
+	right: 15px;
+	filter: blur(4px);
+	transform: skewY(9deg);
+} 
+.outtake .pic p{
+	text-align: center;
+	line-height: 20px;
+	font-size: 13px;
+	padding: 5px;
+	position: relative;
+}
+.outtake .pic p:before{
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #fff;
+    width: 130px;
+    height: 25px;
+    bottom: -20px;
+    left: -10px;
+}
+.outtake .pic p:after{
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #fff;
+    width: 130px;
+    height: 20px;
+    bottom: -20px;
+    right: -10px;
+    z-index: 1;
+}
+.outtake .pic img{
+	width: 100%;
+}
+.outtake .pic h5{
+	text-align: center;
+	padding: 10px 0 5px;
+	font-size: 14px;
+}
+.outtake .pic a{
+	text-decoration: none;
+	color: #846444;
+}
+.outtake .pic .more{
+	display: block;
+	position: absolute;
+	bottom: 7px;
+	right: 10px;
+	margin: auto;
+	font-size: 12px;
+	padding: 5px;
+	z-index: 3;
+}
+
+/*桌機要顯示/手機不顯示992*/
+@media screen and (min-width:768px){
+	.outtake .pic .item{
+		padding: 10px 10px 20px;
+		margin: 20px 45px 40px;
+		position: relative;
+		background-color: #fff;
+		position: relative;
+	}
+}
 /* ---------------商品------------------ */
 .product{
 	/*background-color: #f1e1e5;*/
-	background-color: #000;
+	background-color: rgba(0,0,0,0.15);
 	text-align: center;
 
 }
@@ -678,8 +873,7 @@ h3{
 	font-size: 18px;
 }
 .product_more{
-	/*background-color: #f1e1e5;*/
-	background-color: #000;
+	/*background-color: #f1e1e5;*/	
 	padding: 40px 0px 20px;
 	margin-left: auto;
 	text-align: center;
@@ -687,7 +881,7 @@ h3{
 /* -----------課程--------------- */
 
 .lesson{
-	background-image: url('../images/index_lesson.jpg');
+	background-image: url('../images/index_lesson_pic4.jpg');
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -704,23 +898,31 @@ h3{
 		color: #e5004f;
 		font-size: 36px;
 	}
+	@media screen and (max-width: 767px){
+	  .lesson .date{	
+		font-size: 29px;
+	}	
+	}
 	.lesson .time{
 		display: inline-block;
 		padding-left: 90px;
 		font-size: 15px;
 	}
 	.lesson .sginup{
-		background-color: #fc8484;
-		border: 1px dashed #eebac7;
+		/*background-color: #fc8484;
+		border: 1px dashed #eebac7;*/
+		background-color: rgba(0,0,0,1);
+		border: 1px dashed rgba(0,0,0,.3);
 	}
 
 	.lesson .sginup:hover {
 	    background-color: #fff;
-	    border: 1px dashed #eebac7;
+	    /*border: 1px dashed #eebac7;*/
+	    border: 1px dashed rgba(0,0,0,.3);
 	}
 	.lesson p{
 		font-size: 15px;
-		line-height: 1.8;
+		line-height: 1.5;
 		padding: 20px 0;
 	}
 	.lesson_more{
@@ -730,11 +932,107 @@ h3{
 		display: inline-block;
 		margin-right:15px;
 	}
+/*======專業師資=================*/
+.teacher{
+	/*background: #f1e1e5;*/
+	background: rgba(0,0,0,.2);
+	text-align: center;
+	padding: 4% 0;
+}
+.teacherBg{
+	padding: 2% 0;
+	background-image: url(web/bg/striped_lens.png);
+}
 
+.teacher .pic .item{
+	float: left;
+	margin: 20px 0;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.teacher .pic{
+	/*opacity: 0;*/
+}
+.teacher .pic .img{
+	background-color: #ccc;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.teacher .pic .circle:before{
+	content: "";
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	width: 100%;
+	height: 100%;
+	border:1px dotted #846444;
+	border-radius: 50% 50% 40% 60% / 50% 55% 45% 50% ;
+	animation: circle2 2s linear infinite alternate;
+	transition: 1s;
+}
+.teacher .pic .circle:after{
+	content: "";
+	position: absolute;
+	right: 1%;
+	bottom: 1%;
+	width: 100%;
+	height: 100%;
+	border:1px dotted #846444;
+	border-radius: 60% 40% 40% 60% / 50% 55% 45% 50% ;
+	animation: circle1 2s linear infinite alternate;
+	transition: 1s;
+}
+.teacher .pic .circle:nth-child(2n){
+	animation: circle1 1s linear infinite alternate;
+}
+@keyframes circle1{
+	0%{border-radius: 60% 40% 40% 60% / 50% 55% 45% 50% ;}
+	100%{border-radius: 45% 55% 55% 45% / 55% 45% 55% 40% ;}
+}
+@keyframes circle2{
+	0%{border-radius: 50% 50% 40% 60% / 50% 55% 45% 50% ;}
+	100%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
+}
+
+.teacher .name{
+	background-color: #f9ceb0;
+	border-radius: 50%;
+	padding: 25px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+}
+.teacher .pic .item p{
+	position: absolute;
+	font-size: 14px;
+	top: 10px;
+	right: 10px;
+	margin: auto;
+}
+.teacher .pic .more{
+	text-decoration: none;
+	float: right;
+	font-size: 13px;
+	color: #888583;
+}
+
+/*桌機要顯示/手機不顯示992*/
+@media screen and (min-width: 768px){
+	.teacher .pic .item{
+		float: left;
+		margin: 20px 60px;
+		position: relative;
+		box-sizing: border-box;
+	}
+}
 
 /* =====about content====== */
 .about-contact{
-	background-color: #000;
+	background-color: #fff;
+	/*background-color: rgba(0,0,0,0.15);*/
 }
 
 .about .text,.contact .text {
@@ -752,7 +1050,7 @@ h3{
 .footer{
 	padding: 20px 0;
 	/*background-color: #eebac7;*/
-    background-color: #000;
+	background-color: rgba(0,0,0,.3);
 	position: relative;
 }
 
@@ -768,7 +1066,7 @@ h3{
 	width: 55px;
 	height: 55px;
 	/*background-color: #df97b4;*/
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,.3);
 	border-radius: 50%;
 	text-align: center;
 	line-height: 55px;
@@ -806,7 +1104,7 @@ h3{
 	width: 250px;
 	height: 100px;
 	/*background-color: rgba(238, 186, 199, .3);*/
-	background-color: rgba(128, 128, 128, 0.3);
+	background-color: rgba(0, 0, 0, .2);
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -1056,8 +1354,7 @@ background-color: #fff;
 @media screen and (min-width:768px){
 	.topTitle{
 		height: 350px;
-		/*background-size: 1200px;*/
-        background-size: cover;
+		background-size: 1200px;
 	}
 	.yymmdd	{
 		width: 360px;
@@ -1130,7 +1427,8 @@ background-color: #fff;
 	background-color: #fff;
 }
 .bg_pink{
-	background-color: #f1e1e5;
+	/*background-color: #f1e1e5;*/
+	background-color: rgba(0,0,0,0.15);
 }
 .pd_bg .item{
 	background-color: #fff;
@@ -1140,7 +1438,7 @@ background-color: #fff;
 	overflow: hidden;
 }
 .pd_bg .item:hover{
-	box-shadow:1px 1px 10px rgba(0,0,0,0.3) ;
+	box-shadow:1px 1px 10px rgba(0,0,0,0.2) ;
 }
 .pd_bg .text{
 	padding: 5px 0 20px 0;
@@ -1277,7 +1575,8 @@ background-color: #fff;
 .buy .buy1{
 	text-decoration: none;
 	color: #fff;
-	background: #df507c;
+	/*background: #df507c;*/
+
 	width: 80%;
 	padding: 10px;
 	text-align: center;
@@ -1287,7 +1586,8 @@ background-color: #fff;
 	border-radius: 8px;
 }
 .buy1:hover{
-	background-color: #EB93AF;
+	/*background-color: #EB93AF;*/
+	background-color: rgba(0,0,0,0.3);
 }
 .conR{
 	margin-bottom: 80px;
@@ -1358,9 +1658,7 @@ background-color: #fff;
 }
 
 .search{
-	padding: 20px;
-	text-align: center;
-	display: none;
+	padding: 20px;	
 }
 
 .search_gal{
@@ -1389,7 +1687,6 @@ background-color: #fff;
 
 .gl_bcg{
 	padding: 15px;
-	background-color: #000;
 }
 .gl_bcg .item{
 	margin-bottom: 30px;
@@ -1651,19 +1948,25 @@ background-color: #fff;
 	text-decoration: none;
 	font-size: 15px;
 	color: #fff;
-	background-color: #df507c;
+	/*background-color: #df507c;*/
+	background-color: rgba(0,0,0,1);
+
 	padding: 10px;
-	border:2px dotted #df507c;
+	/*border:2px dotted #df507c;*/
+	border:2px dotted rgba(0,0,0,.3);
+
 	margin: auto;
 	border-radius: 10px;
 	transition: 0.6s;
 }
 .content a:hover{
 	background-color: #fff;
-	color:#df507c; 
+	/*color:#df507c; */
+	color:rgba(0,0,0,0.6); 
 }
 .content.pink{
-	background-color: #f1e1e5;
+	/*background-color: #f1e1e5;*/
+	background-color: rgba(0,0,0,.15);
 }
 
 
@@ -1780,7 +2083,7 @@ background-color: #fff;
 	display: block;
 	width: 100%;
 	height: 80px;
-	background-color:rgba(255,255,255,.3);
+	background-color:rgba(0,0,0,.5);
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1865,7 +2168,7 @@ background-color: #fff;
 	width: 60%;
 	text-decoration: none;
 	color: #fff;
-	background-color: #df507c;
+	/*background-color: #df507c;*/
 	font-size: 16px;
 	padding: 15px;
 	margin:auto;
@@ -1875,7 +2178,8 @@ background-color: #fff;
 }
 
 .singup .btn:hover{
-	background-color: #EB93AF;
+	/*background-color: #EB93AF;*/
+	background-color:rgba(0,0,0,0.3);
 }
 .memo p{
 	font-size: 13px;
@@ -2191,7 +2495,4 @@ background-color: #fff;
 		border-radius: 3px;
 	}
 
-}
-.txt{
-	display: none;
 }
